@@ -1,0 +1,38 @@
+function saludar(nombre) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`Hola, ¿cómo estás ${nombre}?`);
+      resolve();
+    }, 2000);
+  });
+}
+
+function hablar() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("bla bla bla");
+      resolve();
+    }, 1000);
+  });
+}
+
+function adios(nombre) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`Adiós amigo ${nombre}`);
+      resolve();
+    }, 3000);
+  });
+}
+
+async function main() {
+  console.log("Iniciando proceso");
+  await saludar("Cristian");
+  await hablar();
+  await hablar();
+  await hablar();
+  await adios("Cristian");
+  console.log("Terminando el proceso");
+}
+
+main();
